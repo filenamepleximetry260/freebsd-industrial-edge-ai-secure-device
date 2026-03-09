@@ -2,6 +2,27 @@
 ## System Architecture
 
 Below is the logical and physical architecture of the secure industrial edge monitoring platform.
+The diagram is color-coded by domain area and rendered using Arial font:
+
+- Blue: Edge Runtime (FreeBSD ARM64 in QEMU)
+- Teal: Container Platform (Docker Compose services)
+- Purple: AI Detection Layer
+- Amber: Orchestration and Simulation on Host Linux
+
+### Numbered Action Sequence
+
+1. `all_in_one.sh` starts Docker stack (`backend` and `frontend`).
+2. `machine_sim.py` updates `/tmp/sensor_data.txt`.
+3. QEMU automation starts embedded runtime and model load/train path.
+4. `sensor_reader` reads sensor feed.
+5. `sensor_reader` pipes telemetry to `security_monitor`.
+6. `security_monitor` forwards validated JSON to `telemetry_daemon`.
+7. `telemetry_daemon` sends TCP JSON to backend on `:8080`.
+8. Backend ingests telemetry and forwards to `data_processor.py`.
+9. Data is persisted to `telemetry.db`.
+10. AI layer performs anomaly and attack checks.
+11. RedTeam container sends adversarial traffic to backend.
+12. Frontend queries backend APIs and renders SOC panels.
 
 ![Architecture Diagram](architecture.png)
 
