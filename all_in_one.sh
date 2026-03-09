@@ -81,6 +81,7 @@ cat << 'EOF' > automate_freebsd.py
 import pexpect
 import sys
 import time
+import subprocess
 
 def run():
     print("-> Starting QEMU. This may take a few minutes to boot completely...")
@@ -123,8 +124,13 @@ def run():
         print("\n\n---> Starting Edge Daemon...")
         child.sendline('./sensor_reader | ./telemetry_daemon 10.0.2.2 &')
         
-        print("\n\n---> Letting Emulated Edge collect and send data for 10 seconds...")
-        time.sleep(10)
+        # --- PARALLEL REDTEAM TRIGGER ---
+        print("\n\n---> TRIGGERING REDTEAM AI ATTACK (CONCURRENT WITH VM)...")
+        # Launch RedTeam attack in a separate process
+        subprocess.Popen(['./scripts/run_redteam.sh'], stdout=sys.stdout, stderr=sys.stderr)
+        
+        print("\n\n---> Normal Edge Data and RedTeam Attack now running in parallel for 30 seconds...")
+        time.sleep(30)
         
     except pexpect.exceptions.TIMEOUT as e:
         print(f"\nTimeout occurred: {e}")
@@ -142,9 +148,9 @@ EOF
 # Roda o script de automação
 ./.venv/bin/python automate_freebsd.py
 
-show_progress 6 "Simulating Cyber-AI Attack (RedTeam Adversarial ML)"
-# Executamos o ataque RedTeam via Docker para demonstrar o bypass da IA em tempo real
-./scripts/run_redteam.sh
+show_progress 6 "Collecting Final Metrics & Analyzing Breach Data"
+# Esta etapa agora serve para consolidar os logs gerados em paralelo
+sleep 2
 
 show_progress 7 "Analyzing AI Security Models & Performance"
 ./.venv/bin/python ai/anomaly_detection.py --train data/telemetry_data.jsonl
