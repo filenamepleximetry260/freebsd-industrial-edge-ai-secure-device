@@ -98,9 +98,15 @@ EOF
 # Roda o script de automação
 ./.venv/bin/python automate_freebsd.py
 
+echo "=========================================================="
+echo "[6] Simulating Cyber-AI Attack (RedTeam Adversarial ML)..."
+echo "=========================================================="
+# Executamos o ataque RedTeam via Docker para demonstrar o bypass da IA em tempo real
+./scripts/run_redteam.sh
+
 # Mostramos o final
 echo "=========================================================="
-echo "[6] Analyzing AI Models with Telemetry collected from VM..."
+echo "[7] Final Analytics: Analyzing AI Models & Attack Success..."
 ./.venv/bin/python ai/anomaly_detection.py --train data/telemetry_data.jsonl
 
 echo "=========================================================="
