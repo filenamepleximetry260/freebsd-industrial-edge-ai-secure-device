@@ -11,7 +11,7 @@ import os
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("AnomalyDetection")
 
-MODEL_PATH = "isolation_forest.pkl"
+MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'isolation_forest.pkl')
 
 def train_model(data_file):
     """Train the Isolation Forest model on historical telemetry."""

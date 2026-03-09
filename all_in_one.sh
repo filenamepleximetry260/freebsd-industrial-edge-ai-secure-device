@@ -22,7 +22,7 @@ fi
 ./.venv/bin/pip install --prefer-binary -r backend/requirements.txt pexpect > /dev/null 2>&1
 
 echo "[3] Starting Enterprise Dashboard and Telemetry API (Docker)..."
-./run_dashboard.sh
+./scripts/run_dashboard.sh
 sleep 5
 
 echo "[4] Starting Local HTTP Server to expose Embedded Files..."
@@ -101,7 +101,7 @@ EOF
 # Mostramos o final
 echo "=========================================================="
 echo "[6] Analyzing AI Models with Telemetry collected from VM..."
-./.venv/bin/python ai/anomaly_detection.py --train telemetry_data.jsonl
+./.venv/bin/python ai/anomaly_detection.py --train data/telemetry_data.jsonl
 
 echo "=========================================================="
 echo " All-in-One Execution Fully Completed! Cleaning up..."

@@ -4,6 +4,7 @@
 # Description: RedTeam Evasion Attack via Docker
 
 set -e
+cd "$(dirname "$0")/.."
 
 echo "=========================================================="
 echo " Starting RedTeam Adversarial Evasion on Rocky Linux 9    "

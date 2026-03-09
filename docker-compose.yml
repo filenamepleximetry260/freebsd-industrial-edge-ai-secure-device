@@ -14,7 +14,9 @@ services:
     volumes:
       - ./backend:/app/backend
       - ./ai:/app/ai
-      - ./telemetry.db:/app/telemetry.db
+      - ./data/telemetry.db:/app/data/telemetry.db
+      - ./data/telemetry_data.jsonl:/app/data/telemetry_data.jsonl
+      - ./data/isolation_forest.pkl:/app/data/isolation_forest.pkl
     # We mount telemetry.db to preserve it across restarts.
     # The default command runs uvicorn on :8000. We also need to run telemetry_server.py on :8080.
     # We can override the command to use a small shell script that runs both.
@@ -48,9 +50,9 @@ services:
     environment:
       - TARGET_HOST=edge_ai_backend
       - TARGET_PORT=8080
-      - MODEL_PATH=/app/isolation_forest.pkl
+      - MODEL_PATH=/app/data/isolation_forest.pkl
     volumes:
-      - ./isolation_forest.pkl:/app/isolation_forest.pkl
+      - ./data/isolation_forest.pkl:/app/data/isolation_forest.pkl
       - ./redteam:/app/redteam
     networks:
       - edge_ai_net

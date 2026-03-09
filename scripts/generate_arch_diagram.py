@@ -2,6 +2,10 @@
 # Author: Mauro Risonho de Paula Assumpção
 # Description: 
 import graphviz
+import os
+
+# Adicionamos cd no root do projeto se rodado via linha de comando
+os.chdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 dot = graphviz.Digraph(comment='System Architecture')
 dot.graph_attr['rankdir'] = 'TD'

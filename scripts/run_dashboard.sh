@@ -3,15 +3,16 @@
 # Author: Mauro Risonho de Paula Assumpção
 # Description: Starts the Enterprise AI Dashboard using Docker Compose
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 
 echo "=========================================================="
 echo " Booting Edge AI Enterprise Dashboard (Docker)            "
 echo "=========================================================="
 
 echo "[1] Checking for sqlite3 baseline..."
-touch telemetry.db
-chmod 666 telemetry.db
+mkdir -p data
+touch data/telemetry.db
+chmod 666 data/telemetry.db
 
 echo "[2] Starting Docker Compose..."
 # We use docker compose plugin or docker-compose

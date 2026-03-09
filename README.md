@@ -34,6 +34,11 @@ Running this project brings up the entire Docker pipeline and QEMU emulator out-
    ./all_in_one.sh
    ```
 3. Open the Premium SOC Dashboard at [http://localhost:3000](http://localhost:3000).
-4. Simulate Data Science Anomalies and RedTeam AI evasion algorithms directly using the `redteam/` python scripts.
+4. Simulate Data Science Anomalies and RedTeam AI evasion algorithms using the scripts in `scripts/`:
+   ```bash
+   chmod +x scripts/run_redteam.sh
+   ./scripts/run_redteam.sh
+   ```
+   Or manually with the `redteam/` python scripts.
 
 For exhaustive documentation, read `walkthrough.md`.

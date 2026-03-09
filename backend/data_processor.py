@@ -14,7 +14,7 @@ from anomaly_detection import detect_anomaly
 
 logger = logging.getLogger("DataProcessor")
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'telemetry.db')
+DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'telemetry.db')
 
 def init_db():
     """Initializes SQLite3 Database for persistence."""
@@ -44,7 +44,8 @@ def process_telemetry(data: dict):
     logger.info(f"Received Telemetry: {data}")
     
     # 1. Armazenamento em Arquivo (Legado / Treino Local)
-    with open("telemetry_data.jsonl", "a") as f:
+    jsonl_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'telemetry_data.jsonl')
+    with open(jsonl_path, "a") as f:
         f.write(json.dumps(data) + "\n")
         
     # 2. Persistência em Banco de Dados Relacional (SQLite3)
