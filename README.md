@@ -1,4 +1,4 @@
-# SDD — FreeBSD ARM64 Industrial Edge AI Platform
+# FreeBSD ARM64 Industrial Edge AI Platform
 
 An advanced E2E (End-to-End) platform built to demonstrate cutting-edge **Data Science, AI / MLOps, and Embedded Security (RedTeam)**.
 
