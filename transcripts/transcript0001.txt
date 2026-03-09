@@ -1,20 +1,12 @@
-ROTEIRO FINAL DO VÍDEO — PORTFÓLIO (1 MINUTO)
-
 Nome: Mauro Risonho de Paula Assumpção
 Projeto: FreeBSD ARM64 Industrial Edge AI Platform
-
-INTRODUÇÃO (0:00 – 0:08)
 
 Olá, meu nome é Mauro Risonho de Paula Assumpção. 
 Neste projeto desenvolvi uma plataforma de monitoramento baseada em edge computing utilizando FreeBSD ARM64, sistemas embarcados em C e análise de dados com inteligência artificial.
 
-O PROBLEMA (0:08 – 0:20)
-
 Inicialmente este projeto foi pensado para aplicações no segmento automotivo, onde veículos modernos produzem sinais contínuos de sensores como vibração, temperatura e corrente elétrica. Esses sinais podem indicar desgaste mecânico ou falhas iminentes.
 
 A mesma arquitetura pode ser aplicada em ambientes industriais, onde máquinas também geram telemetria operacional que precisa ser analisada em tempo real.
-
-A ENGENHARIA (0:20 – 0:42)
 
 Para resolver esse problema projetei uma arquitetura de edge computing baseada em FreeBSD ARM64 executando em QEMU, simulando um dispositivo embarcado responsável por coletar telemetria de sensores.
 
@@ -22,10 +14,6 @@ No dispositivo embarcado implementei serviços em C responsáveis pela aquisiç�
 
 No backend desenvolvi um pipeline em Python para ingestão e análise de dados industriais, incluindo modelos de machine learning para detecção de anomalias.
 
-SEGURANÇA E RED TEAM (0:42 – 0:52)
-
 Também implementei simulações de ataques usando uma abordagem de Red Team com apoio de IA, simulando manipulação de sensores e telemetria para validar se o sistema consegue detectar comportamentos adversariais.
-
-CONTRIBUIÇÃO E RESULTADO (0:52 – 1:00)
 
 Eu projetei a arquitetura completa do sistema, implementei os componentes embarcados, o pipeline de dados e os modelos de detecção. O resultado é uma plataforma que integra sistemas embarcados, ciência de dados e inteligência artificial para monitoramento industrial em edge computing.
