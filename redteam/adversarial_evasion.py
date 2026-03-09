@@ -15,9 +15,9 @@ import pandas as pd
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - Adversarial AI - %(levelname)s - %(message)s")
 
 # Tenta carregar o modelo de ML do diretório raiz
-MODEL_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'isolation_forest.pkl'))
-TARGET_HOST = "127.0.0.1"
-TARGET_PORT = 8080
+MODEL_PATH = os.environ.get("MODEL_PATH", os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'isolation_forest.pkl')))
+TARGET_HOST = os.environ.get("TARGET_HOST", "127.0.0.1")
+TARGET_PORT = int(os.environ.get("TARGET_PORT", 8080))
 
 def send_payload(payload):
     """Envia o payload forjado diretamente para o Backend (bypass no embedded)."""

@@ -40,6 +40,23 @@ services:
       - backend
     restart: unless-stopped
 
+  redteam:
+    build:
+      context: ./redteam
+      dockerfile: Dockerfile
+    container_name: edge_ai_redteam
+    environment:
+      - TARGET_HOST=edge_ai_backend
+      - TARGET_PORT=8080
+      - MODEL_PATH=/app/isolation_forest.pkl
+    volumes:
+      - ./isolation_forest.pkl:/app/isolation_forest.pkl
+      - ./redteam:/app/redteam
+    networks:
+      - edge_ai_net
+    profiles:
+      - redteam
+
 networks:
   edge_ai_net:
     driver: bridge

@@ -1,0 +1,8 @@
+# LICENSE UPL
+# Author: Mauro Risonho de Paula Assumpção
+# Description: Requirements for RedTeam AML Fuzzer
+
+scikit-learn==1.6.1
+pandas==2.2.3
+joblib==1.5.3
+numpy==2.0.2
