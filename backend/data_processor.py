@@ -48,7 +48,27 @@ def process_telemetry(data: dict):
     with open(jsonl_path, "a") as f:
         f.write(json.dumps(data) + "\n")
         
-    # 2. Persistência em Banco de Dados Relacional (SQLite3)
+    # 2. Real-time AI execution
+    is_attack = detect_attack(data)
+    is_anomaly = False
+    if not is_attack:
+        # Só checa anomalia estatística se não for um ataque claro
+        is_anomaly = detect_anomaly(data)
+
+    incoming_flag = data.get('malicious_flag')
+    detected_flag = None
+    if is_attack:
+        detected_flag = 'ATTACK_DETECTED'
+    elif is_anomaly:
+        detected_flag = 'ANOMALY_DETECTED'
+
+    if incoming_flag and detected_flag and incoming_flag != detected_flag:
+        final_flag = f"{incoming_flag};{detected_flag}"
+    else:
+        final_flag = incoming_flag or detected_flag
+
+    # 3. Persistência em Banco de Dados Relacional (SQLite3)
+    conn = None
     try:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
@@ -61,7 +81,7 @@ def process_telemetry(data: dict):
             data.get('vibration'),
             data.get('current'),
             data.get('timestamp'),
-            data.get('malicious_flag', None) # Pode ser None se for trafego normal
+            final_flag
         ))
         conn.commit()
     except Exception as e:
@@ -69,9 +89,3 @@ def process_telemetry(data: dict):
     finally:
         if conn:
             conn.close()
-        
-    # Real-time AI execution
-    is_attack = detect_attack(data)
-    if not is_attack:
-        # Só checa anomalia estatística se não for um ataque claro
-        detect_anomaly(data)

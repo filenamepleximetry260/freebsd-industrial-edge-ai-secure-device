@@ -24,7 +24,7 @@ fi
 
 echo "Starting FreeBSD AArch64 VM..."
 echo "Host port 2222 forwards to VM port 22 (SSH)."
-echo "Host port 8080 forwards to VM port 8080 (Telemetry)."
+echo "Telemetry is sent from the VM to host at 10.0.2.2:8080 via QEMU user networking."
 echo "Press Ctrl+A then X to exit QEMU."
 
 qemu-system-aarch64 \

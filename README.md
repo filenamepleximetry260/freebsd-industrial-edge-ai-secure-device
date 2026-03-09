@@ -41,4 +41,4 @@ Running this project brings up the entire Docker pipeline and QEMU emulator out-
    ```
    Or manually with the `redteam/` python scripts.
 
-For exhaustive documentation, read `walkthrough.md`.
+For exhaustive documentation, read `docs/SDD.md` and `docs/architecture.md`.

@@ -24,7 +24,8 @@ def send_payload(payload):
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.connect((TARGET_HOST, TARGET_PORT))
-            s.sendall(json.dumps(payload).encode('utf-8'))
+            payload_str = json.dumps(payload) + "\n"
+            s.sendall(payload_str.encode('utf-8'))
             logging.info(f"Adversarial Payload Injected: {payload}")
     except ConnectionRefusedError:
         logging.error("Failed to connect to the backend server. Make sure it is running on port 8080.")

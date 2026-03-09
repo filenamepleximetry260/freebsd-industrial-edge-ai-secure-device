@@ -25,6 +25,6 @@ COPY backend/requirements.txt .
 RUN pip3 install --no-cache-dir --prefer-binary -r requirements.txt
 
 # Create an empty db file to prevent ownership issues if mapped as a volume
-RUN touch /app/telemetry.db && chmod 666 /app/telemetry.db
+RUN mkdir -p /app/data && touch /app/data/telemetry.db && chmod 664 /app/data/telemetry.db
 
 CMD ["python3", "-m", "uvicorn", "backend.api:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -11,15 +11,22 @@ from pydantic import BaseModel
 
 app = FastAPI(title="Edge AI Telemetry API")
 
+# Restrict CORS to known local dashboard origins by default.
+ALLOWED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000").split(",")
+    if origin.strip()
+]
+
+DB_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'telemetry.db'))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'telemetry.db')
 
 class TelemetryRecord(BaseModel):
     id: int

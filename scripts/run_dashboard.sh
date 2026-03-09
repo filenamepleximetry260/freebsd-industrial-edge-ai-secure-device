@@ -12,7 +12,7 @@ echo "=========================================================="
 echo "[1] Checking for sqlite3 baseline..."
 mkdir -p data
 touch data/telemetry.db
-chmod 666 data/telemetry.db
+chmod 664 data/telemetry.db
 
 echo "[2] Starting Docker Compose..."
 # We use docker compose plugin or docker-compose

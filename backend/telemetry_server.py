@@ -33,6 +33,14 @@ def handle_client(conn, addr):
                     except json.JSONDecodeError:
                         logger.error(f"Invalid JSON received: {line}")
 
+        # Process a trailing packet even if the client disconnects without newline.
+        if buffer.strip():
+            try:
+                payload = json.loads(buffer)
+                process_telemetry(payload)
+            except json.JSONDecodeError:
+                logger.error(f"Invalid trailing JSON received: {buffer}")
+
 def start_server():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         # Allow reusing address
