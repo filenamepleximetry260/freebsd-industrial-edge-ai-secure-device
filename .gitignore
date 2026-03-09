@@ -12,3 +12,10 @@ isolation_forest.pkl
 *.log
 .DS_Store
 automate_freebsd.py
+
+# FreeBSD QEMU disk images - required locally for emulation but not stored in git
+# Download via: qemu/download_image.sh
+*.qcow2
+*.qcow2.xz
+*.img
+*.iso
