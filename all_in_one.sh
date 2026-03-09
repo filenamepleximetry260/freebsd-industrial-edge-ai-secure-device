@@ -27,7 +27,7 @@ sleep 5
 
 echo "[4] Starting Local HTTP Server to expose Embedded Files..."
 cd embedded
-python3 -m http.server 8000 &
+python3 -m http.server 8081 &
 HTTP_PID=$!
 cd ..
 
@@ -63,13 +63,13 @@ def run():
         print("\n\n---> Downloading C Embedded Sources from Host...")
         child.sendline('mkdir -p src')
         child.expect('root@.*:~ #')
-        child.sendline('fetch http://10.0.2.2:8000/src/sensor_reader.c')
+        child.sendline('fetch http://10.0.2.2:8081/src/sensor_reader.c')
         child.expect('root@.*:~ #')
-        child.sendline('fetch http://10.0.2.2:8000/src/telemetry_daemon.c')
+        child.sendline('fetch http://10.0.2.2:8081/src/telemetry_daemon.c')
         child.expect('root@.*:~ #')
-        child.sendline('fetch http://10.0.2.2:8000/src/security_monitor.c')
+        child.sendline('fetch http://10.0.2.2:8081/src/security_monitor.c')
         child.expect('root@.*:~ #')
-        child.sendline('fetch http://10.0.2.2:8000/Makefile')
+        child.sendline('fetch http://10.0.2.2:8081/Makefile')
         child.expect('root@.*:~ #')
         
         print("\n\n---> Compiling Embedded System inside FreeBSD ARM64...")
