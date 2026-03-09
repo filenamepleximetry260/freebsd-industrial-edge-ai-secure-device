@@ -18,6 +18,7 @@ This project simulates a secure industrial edge device running on **FreeBSD ARM6
 *   **Enterprise AI Dashboard**: High-grade React (Vite) Glassmorphism dashboard leveraging Recharts for time-frequency data analysis.
 
 ### 3. RedTeam AI & Security Operations (SOC)
+*   **Adversarial Machine Learning (White-Box Evasion)**: An AI attacks the AI. A fuzzer script (`adversarial_evasion.py`) loads the defensive Isolation Forest model and iterates mathematically to craft catastrophic physical bounds (e.g., 75°C temperature) that fool the classification boundary into predicting it as "Normal" telemetry.
 *   **Protocol Fuzzing & Spoofing**: Simulating physical attacker intervention rewriting telemetry payloads (`sensor_spoof.py`).
 *   **Data Poisoning / Injection**: Bypassing embedded defenses (`telemetry_injection.py`).
 *   **Live Attack Feeds**: A fully integrated visual feed triggering when ML rules categorize data anomalies.
@@ -33,6 +34,6 @@ Running this project brings up the entire Docker pipeline and QEMU emulator out-
    ./all_in_one.sh
    ```
 3. Open the Premium SOC Dashboard at [http://localhost:3000](http://localhost:3000).
-4. Simulate Data Science Anomalies and RedTeam attacks directly using the `redteam/` python scripts.
+4. Simulate Data Science Anomalies and RedTeam AI evasion algorithms directly using the `redteam/` python scripts.
 
 For exhaustive documentation, read `walkthrough.md`.
