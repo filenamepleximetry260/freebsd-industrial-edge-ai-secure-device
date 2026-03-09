@@ -30,27 +30,28 @@ show_progress() {
     local elapsed=$(( current_time - START_TIME ))
     
     # Static weights for estimation (in seconds)
-    # [1]img=10, [2]venv=20, [3]docker=40, [4]http=1, [5]qemu=180, [6]redteam=30, [7]ai=10
     local total_est=291
     local remaining_est=$(( total_est - (stage * total_est / TOTAL_STAGES) ))
     
-    echo -e "\n${CYAN}----------------------------------------------------------${NC}"
-    echo -e "${YELLOW}STAGE ${stage}/${TOTAL_STAGES}: ${NC}${title}"
+    printf "\n${CYAN}----------------------------------------------------------${NC}\n"
+    printf "${YELLOW}STAGE %d/%d: ${NC}%s\n" "$stage" "$TOTAL_STAGES" "$title"
     printf "${GREEN}["
-    printf "%${filled}s" | tr ' ' '#'
-    printf "%${empty}s" | tr ' ' '-'
+    local i
+    for ((i=0; i<filled; i++)); do printf "#"; done
+    for ((i=0; i<empty; i++)); do printf "-"; done
     printf "] %d%% ${NC}" "$percent"
+    
     if [ $stage -lt $TOTAL_STAGES ]; then
-        echo -e " (Est. Remaining: ~${remaining_est}s)"
+        printf " (Est. Remaining: ~%ds)\n" "$remaining_est"
     else
-        echo -e " (COMPLETED in ${elapsed}s)"
+        printf " (COMPLETED in %ds)\n" "$elapsed"
     fi
-    echo -e "${CYAN}----------------------------------------------------------${NC}"
+    printf "${CYAN}----------------------------------------------------------${NC}\n"
 }
 
-echo -e "${BLUE}==========================================================${NC}"
-echo -e "${BLUE} Starting All-in-One FreeBSD Edge AI Setup & Execution    ${NC}"
-echo -e "${BLUE}==========================================================${NC}"
+printf "${BLUE}==========================================================${NC}\n"
+printf "${BLUE} Starting All-in-One FreeBSD Edge AI Setup & Execution    ${NC}\n"
+printf "${BLUE}==========================================================${NC}\n"
 
 cd "$(dirname "$0")"
 
@@ -148,15 +149,17 @@ show_progress 6 "Simulating Cyber-AI Attack (RedTeam Adversarial ML)"
 show_progress 7 "Analyzing AI Security Models & Performance"
 ./.venv/bin/python ai/anomaly_detection.py --train data/telemetry_data.jsonl
 
-echo -e "\n${GREEN}==========================================================${NC}"
-echo -e "${GREEN} All-in-One Execution Fully Completed Successfully!       ${NC}"
-echo -e "${GREEN}==========================================================${NC}"
-if command -v docker-compose &> /dev/null; then
-    docker-compose down > /dev/null 2>&1 || true
-else
-    docker compose down > /dev/null 2>&1 || true
-fi
+printf "\n${GREEN}==========================================================${NC}\n"
+printf "${GREEN} All-in-One Execution Fully Completed Successfully!       ${NC}\n"
+printf "${GREEN}==========================================================${NC}\n"
+printf "${YELLOW}NOTE: Docker services remain running for inspection.${NC}\n"
+printf " - Dashboard: http://localhost:3000\n"
+printf " - API Backend: http://localhost:8000/docs\n"
+printf "${YELLOW}To stop everything later: docker-compose down${NC}\n\n"
+
+# Only kill the background file transfer server
 kill $HTTP_PID > /dev/null 2>&1 || true
 rm -f automate_freebsd.py
+
 
 echo "Done."
