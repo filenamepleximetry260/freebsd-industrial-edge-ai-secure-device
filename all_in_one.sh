@@ -69,6 +69,11 @@ show_progress 3 "Starting Enterprise Dashboard & API (Docker)"
 ./scripts/run_dashboard.sh
 sleep 5
 
+# Keep model version aligned with current runtime before RedTeam phase.
+if [ -s "data/telemetry_data.jsonl" ]; then
+    ./.venv/bin/python ai/anomaly_detection.py --train data/telemetry_data.jsonl > /dev/null 2>&1 || true
+fi
+
 show_progress 4 "Starting Embedded File Transfer Server"
 cd embedded
 python3 -m http.server 8081 &
@@ -126,16 +131,28 @@ def run():
         
         # --- PARALLEL REDTEAM TRIGGER ---
         print("\n\n---> TRIGGERING REDTEAM AI ATTACK (CONCURRENT WITH VM)...")
-        # Launch RedTeam attack in a separate process
-        subprocess.Popen(['./scripts/run_redteam.sh'], stdout=sys.stdout, stderr=sys.stderr)
+        # Launch RedTeam attack in a separate process and validate its result.
+        redteam_proc = subprocess.Popen(['./scripts/run_redteam.sh'], stdout=sys.stdout, stderr=sys.stderr)
         
         print("\n\n---> Normal Edge Data and RedTeam Attack now running in parallel for 30 seconds...")
         time.sleep(30)
+
+        # Wait briefly for RedTeam completion and fail fast if it crashes.
+        try:
+            redteam_exit = redteam_proc.wait(timeout=120)
+        except subprocess.TimeoutExpired:
+            redteam_proc.terminate()
+            redteam_exit = redteam_proc.wait(timeout=10)
+
+        if redteam_exit != 0:
+            raise RuntimeError(f"RedTeam stage failed with exit code {redteam_exit}")
         
     except pexpect.exceptions.TIMEOUT as e:
         print(f"\nTimeout occurred: {e}")
+        raise
     except pexpect.exceptions.EOF as e:
         print(f"\nEOF occurred: {e}")
+        raise
     finally:
         print("\n\n---> Shutting down QEMU Virtual Machine gracefully...")
         child.sendline('poweroff')
@@ -161,7 +178,7 @@ printf "${GREEN}==========================================================${NC}\
 printf "${YELLOW}NOTE: Docker services remain running for inspection.${NC}\n"
 printf " - Dashboard: http://localhost:3000\n"
 printf " - API Backend: http://localhost:8000/docs\n"
-printf "${YELLOW}To stop everything later: docker-compose down${NC}\n\n"
+printf "${YELLOW}To stop everything later: docker compose down${NC}\n\n"
 
 # Only kill the background file transfer server
 kill $HTTP_PID > /dev/null 2>&1 || true

@@ -62,3 +62,51 @@
 {"device_id": "edge-arm64", "temperature": 40.03, "vibration": 2.1, "current": 8.12, "timestamp": 1773021156}
 {"device_id": "edge-arm64", "temperature": 39.73, "vibration": 1.95, "current": 8.23, "timestamp": 1773021157}
 {"device_id": "edge-arm64", "temperature": 39.47, "vibration": 2.09, "current": 7.8, "timestamp": 1773021158}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 1.95, "current": 8.08, "timestamp": 1773024128, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 1.95, "current": 8.08, "timestamp": 1773024129, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 1.95, "current": 8.08, "timestamp": 1773024130, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 1.95, "current": 8.08, "timestamp": 1773024131, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 1.95, "current": 8.08, "timestamp": 1773024132, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "edge-arm64", "temperature": 40.31, "vibration": 2.05, "current": 7.77, "timestamp": 1773024944}
+{"device_id": "edge-arm64", "temperature": 39.14, "vibration": 1.96, "current": 7.93, "timestamp": 1773024946}
+{"device_id": "edge-arm64", "temperature": 40.27, "vibration": 2.1, "current": 8.01, "timestamp": 1773024947}
+{"device_id": "edge-arm64", "temperature": 40.13, "vibration": 2.08, "current": 7.86, "timestamp": 1773024948}
+{"device_id": "edge-arm64", "temperature": 39.36, "vibration": 2.09, "current": 8.17, "timestamp": 1773024949}
+{"device_id": "edge-arm64", "temperature": 39.55, "vibration": 1.94, "current": 8.18, "timestamp": 1773024950}
+{"device_id": "edge-arm64", "temperature": 40.43, "vibration": 1.93, "current": 7.98, "timestamp": 1773024951}
+{"device_id": "edge-arm64", "temperature": 39.81, "vibration": 2.04, "current": 7.76, "timestamp": 1773024952}
+{"device_id": "edge-arm64", "temperature": 39.43, "vibration": 2.04, "current": 8.07, "timestamp": 1773024953}
+{"device_id": "edge-arm64", "temperature": 39.2, "vibration": 2.07, "current": 8.15, "timestamp": 1773024954}
+{"device_id": "edge-arm64", "temperature": 39.77, "vibration": 2.01, "current": 8.03, "timestamp": 1773024955}
+{"device_id": "edge-arm64", "temperature": 39.85, "vibration": 2.02, "current": 8.18, "timestamp": 1773024956}
+{"device_id": "edge-arm64", "temperature": 40.57, "vibration": 1.95, "current": 8.18, "timestamp": 1773024957}
+{"device_id": "edge-arm64", "temperature": 39.61, "vibration": 2.06, "current": 8.13, "timestamp": 1773024958}
+{"device_id": "edge-arm64", "temperature": 40.03, "vibration": 2.1, "current": 8.12, "timestamp": 1773024959}
+{"device_id": "edge-arm64", "temperature": 39.73, "vibration": 1.95, "current": 8.23, "timestamp": 1773024960}
+{"device_id": "edge-arm64", "temperature": 39.47, "vibration": 2.09, "current": 7.8, "timestamp": 1773024961}
+{"device_id": "edge-arm64", "temperature": 40.37, "vibration": 1.97, "current": 8.14, "timestamp": 1773024962}
+{"device_id": "edge-arm64", "temperature": 40.4, "vibration": 2.02, "current": 7.99, "timestamp": 1773024963}
+{"device_id": "edge-arm64", "temperature": 39.7, "vibration": 2.04, "current": 7.92, "timestamp": 1773024964}
+{"device_id": "edge-arm64", "temperature": 39.3, "vibration": 1.91, "current": 8.19, "timestamp": 1773024965}
+{"device_id": "edge-arm64", "temperature": 40.43, "vibration": 2.0, "current": 7.98, "timestamp": 1773024967}
+{"device_id": "edge-arm64", "temperature": 40.15, "vibration": 1.96, "current": 8.1, "timestamp": 1773024968}
+{"device_id": "edge-arm64", "temperature": 39.86, "vibration": 2.02, "current": 8.0, "timestamp": 1773024969}
+{"device_id": "edge-arm64", "temperature": 39.4, "vibration": 1.92, "current": 7.99, "timestamp": 1773024970}
+{"device_id": "edge-arm64", "temperature": 40.89, "vibration": 1.99, "current": 8.11, "timestamp": 1773024971}
+{"device_id": "edge-arm64", "temperature": 40.79, "vibration": 2.04, "current": 8.1, "timestamp": 1773024972}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 2.0, "current": 8.08, "timestamp": 1773024971, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "edge-arm64", "temperature": 40.97, "vibration": 1.98, "current": 7.78, "timestamp": 1773024973}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 2.0, "current": 8.08, "timestamp": 1773024972, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 2.0, "current": 8.08, "timestamp": 1773024973, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "edge-arm64", "temperature": 40.52, "vibration": 1.92, "current": 8.07, "timestamp": 1773024974}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 2.0, "current": 8.08, "timestamp": 1773024974, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "edge-arm64", "temperature": 39.47, "vibration": 1.99, "current": 7.92, "timestamp": 1773024975}
+{"device_id": "adversarial-bot", "temperature": 65.0, "vibration": 2.0, "current": 8.08, "timestamp": 1773024975, "malicious_flag": "AI_EVASION_SUCCESS"}
+{"device_id": "edge-arm64", "temperature": 40.15, "vibration": 2.02, "current": 7.95, "timestamp": 1773024976}
+{"device_id": "edge-arm64", "temperature": 39.9, "vibration": 1.96, "current": 8.2, "timestamp": 1773024977}
+{"device_id": "edge-arm64", "temperature": 40.83, "vibration": 2.08, "current": 7.84, "timestamp": 1773024978}
+{"device_id": "edge-arm64", "temperature": 40.23, "vibration": 1.96, "current": 8.13, "timestamp": 1773024979}
+{"device_id": "edge-arm64", "temperature": 39.22, "vibration": 2.0, "current": 8.18, "timestamp": 1773024980}
+{"device_id": "edge-arm64", "temperature": 40.17, "vibration": 1.99, "current": 7.91, "timestamp": 1773024981}
+{"device_id": "edge-arm64", "temperature": 39.63, "vibration": 1.97, "current": 7.76, "timestamp": 1773024982}
+{"device_id": "edge-arm64", "temperature": 39.02, "vibration": 1.97, "current": 7.95, "timestamp": 1773024983}
