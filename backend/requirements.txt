@@ -1,0 +1,10 @@
+# LICENSE UPL
+# Author: Mauro Risonho de Paula Assumpção
+# Description: 
+scikit-learn>=1.0.0
+pandas
+numpy
+requests==2.31.0
+fastapi
+uvicorn
+pydantic
